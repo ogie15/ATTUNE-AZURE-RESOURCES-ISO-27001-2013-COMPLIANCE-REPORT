@@ -49,11 +49,13 @@ $Script:UserCredential = New-Object System.Management.Automation.PSCredential ($
 
 # Connect using set credentials to Azure
 Connect-AzAccount -Credential $Script:UserCredential
-#EndRegion for Connection to Azure 
+#EndRegion for Connection to Azure
 
+# Set the Resource Provider's Name
+$ResourceProviderName = "Microsoft.PolicyInsights"
 
 # Register the resource provider
-Register-AzResourceProvider -ProviderNamespace 'Microsoft.PolicyInsights'
+Register-AzResourceProvider -ProviderNamespace $ResourceProviderName
 
 #Region Disconnect the Azure session
 Disconnect-AzAccount

@@ -37,6 +37,9 @@ $Script:UserName = "{azureusername.value}"
 
 # Save secretkey to this variable
 $Script:PasswordString = "{azurepassword.value}"
+
+# Save the name of the Azure Subscription
+$Script:SubscriptionName = "{azuresubscription.value}"
 #EndRegion assign variables
 
 
@@ -53,7 +56,7 @@ Connect-AzAccount -Credential $Script:UserCredential
 
 
 # Set the Azure Subscription where Policy Assignment is going to take place.
-$Script:Subscription = Get-AzSubscription -SubscriptionName 'Visual Studio Enterprise Subscription'
+$Script:Subscription = Get-AzSubscription -SubscriptionName $Script:SubscriptionName
 
 # Gets Azure Policy Definitions
 $Script:AllAZPolicies = Get-AzPolicyDefinition -SubscriptionId $Script:Subscription.Id

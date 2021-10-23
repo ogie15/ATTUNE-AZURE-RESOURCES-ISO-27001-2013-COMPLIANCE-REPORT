@@ -38,6 +38,9 @@ $Script:UserName = "{azureusername.value}"
 
 # Save secretkey to this variable
 $Script:PasswordString = "{azurepassword.value}"
+
+# Save the name of the Azure Subscription
+$Script:SubscriptionName = "{azuresubscription.value}"
 #EndRegion assign variables
 
 
@@ -55,7 +58,7 @@ Connect-AzAccount -Credential $Script:UserCredential
 
 
 # Set the Azure Subscription where Policy Assignment is going to take place.
-$Script:Subscription = Get-AzSubscription -SubscriptionName 'Visual Studio Enterprise Subscription'
+$Script:Subscription = Get-AzSubscription -SubscriptionName $Script:SubscriptionName
 
 # Set Variable for Azure Policy Assignment
 $Script:AzPolicyAssignments = Get-AzPolicyAssignment -Scope "/subscriptions/$($Script:Subscription.Id)"
@@ -168,7 +171,7 @@ foreach ($Script:AzPolicyAssignment in $Script:AzPolicyAssignments) {
 # Export to CSV
 $Script:FinalArray | Export-Csv -LiteralPath $Script:LiteralPath -NoTypeInformation -Force
 
-# Write Out the value to screen
+# Write Out the value to the screen
 Write-Output $Script:FinalArray
 
 #Region Disconnect the Azure session

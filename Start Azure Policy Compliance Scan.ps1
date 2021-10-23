@@ -52,7 +52,7 @@ Connect-AzAccount -Credential $Script:UserCredential
 #EndRegion for Connection to Azure 
 
 
-# Starts Azure Policy Comliance Scan
+# Starts Azure Policy Compliance Scan
 Start-AzPolicyComplianceScan | Wait-Job
 
 
