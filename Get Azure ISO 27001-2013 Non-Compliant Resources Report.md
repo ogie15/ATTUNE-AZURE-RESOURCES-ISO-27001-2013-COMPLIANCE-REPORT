@@ -16,6 +16,8 @@ Then the values below are set:
 
 Next, a connection to Azure is made.
 
+Loops through all subscriptions on Azure and check their availability.
+
 Then it retrieves the Policy Assignment for each subscription in Azure.
 
 Also, retrieves the Policy States that are Non-Compliant with ISO 27001:2013 for each subscription.

@@ -2,7 +2,7 @@
 
 The Blueprint first gets the Execution Policy of the current PowerShell session.
 
-Then checks if the Execution Policy is set to Unrestricted.
+Then it checks if the Execution Policy is set to Unrestricted.
 
 If it's not, it then sets the Execution Policy to Unrestricted for the current session.
 
@@ -16,6 +16,8 @@ Then the values below are set:
 1. ResourceIDLocation: This holds the location of the policy assignment's resource identity corresponding to the `ResourceIDLocation` set in the Inputs Tab.
 
 Next, a connection to Azure is made.
+
+Then it loops through all Subscriptions on Azure and check their availability.
 
 All Azure Policy Definitions are retrieved for each subscription in Azure.
 
