@@ -40,7 +40,7 @@ $Script:UserName = "{azureusername.value}"
 $Script:PasswordString = "{azurepassword.value}"
 
 # Save the name of the Azure Subscription
-$Script:SubscriptionName = { azuresubscription.value }
+$Script:SubscriptionName = {azuresubscription.value}
 #EndRegion assign variables
 
 
