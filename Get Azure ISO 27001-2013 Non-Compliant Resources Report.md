@@ -12,7 +12,7 @@ Then the values below are set:
 
 1. UserName: This is the Username of the Azure Administrator corresponding to the `AzureUserName` set in the Inputs Tab.
 1. PasswordString: This is the Password of the Azure Administrator corresponding to the `AzurePassword` set in the Inputs Tab.
-1. SubscriptionName: This holds an array of Azure Subscriptions corresponding to the `AzureSubscription` set in the Inputs Tab.
+1. SubscriptionName: This holds an array of Azure Subscriptions corresponding to the `AzureSubscriptions` set in the Inputs Tab.
 
 Next, a connection to Azure is made.
 
